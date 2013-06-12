@@ -10,7 +10,8 @@ module SimplesIdeias
         config = I18n.config_file
         cache_file = I18n::Engine.load_path_hash_cache
 
-        Rails.application.assets.register_preprocessor "application/javascript", :"i18n-js_dependencies" do |context, data|
+        _registry = Sprockets.respond_to?('register_preprocessor') ? Sprockets : Rails.application.assets
+        _registry.register_preprocessor "application/javascript", :"i18n-js_dependencies" do |context, data|
           if context.logical_path == I18N_TRANSLATIONS_ASSET
             context.depend_on(config) if I18n.config?
             # also set up dependencies on every locale file
