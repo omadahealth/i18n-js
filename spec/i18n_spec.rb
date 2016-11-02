@@ -1,4 +1,5 @@
 require "spec_helper"
+require 'yaml'
 
 if File.basename(Rails.root) != "tmp"
   abort <<-TXT
