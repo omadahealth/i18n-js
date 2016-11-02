@@ -24,4 +24,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency "spec-js", "~> 0.1.0.beta.0"
   s.add_development_dependency "rake"
   s.add_development_dependency "pry"
+  s.add_development_dependency "package_cloud"
 end
