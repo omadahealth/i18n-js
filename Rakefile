@@ -11,3 +11,5 @@ RSpec::Core::RakeTask.new(:"spec:ruby")
 
 desc "Run all specs"
 task :spec => [:"spec:ruby", :"spec:js"]
+
+task :default => [:spec]
